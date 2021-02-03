@@ -1,0 +1,17 @@
+using System;
+
+namespace Classes1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var inputString = "This  is   a Text with    too much     space";
+            while (inputString.Contains(@"  "))
+            {
+                inputString = inputString.Replace(@"  ", @" ");
+            }
+            Console.WriteLine(inputString);
+        }
+    }
+}
