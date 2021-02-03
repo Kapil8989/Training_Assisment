@@ -1,0 +1,37 @@
+using System;
+
+namespace Abstract1
+{
+    abstract class Animals
+    {
+        public abstract void cats();
+        public abstract void dogs();
+    }
+    
+    class Cats:Animals
+    {
+        public override void cats()
+        {
+            Console.WriteLine("Cats meow");
+        }
+        public override void dogs() { }
+    }
+    class Dogs:Animals
+    {
+        public override void dogs()
+        {
+            Console.WriteLine("Dogs Barks");
+        }
+        public override void cats() { }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cats c = new Cats();
+            c.cats();
+            Dogs d = new Dogs();
+            d.dogs();
+        }
+    }
+}
