@@ -1,0 +1,51 @@
+using System;
+
+namespace Abstract1
+{
+    abstract class Marks
+    {
+        public double m1, m2, m3,percentage;
+        public abstract double getPercentage();
+    }
+    class A: Marks
+    {
+        public A(double m1,double m2,double m3)
+        {
+            this.m1 = m1;
+            this.m2 = m2;
+            this.m3 = m3;
+        }
+        public override double getPercentage()
+        {
+            percentage = (this.m1 + this.m2 + this.m3) / 3;
+            return percentage;
+        }
+
+    }
+    class B:Marks
+    {
+        public double m4;
+        public B(double m1, double m2, double m3,double m4)
+        {
+            this.m1 = m1;
+            this.m2 = m2;
+            this.m3 = m3;
+            this.m4 = m4;
+        }
+        public override double getPercentage()
+        {
+            percentage = (this.m1 + this.m2 + this.m3+this.m4) / 4;
+            return percentage;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A a = new A(45,55,66);
+            Console.WriteLine("The Percentage of Student A is "+a.getPercentage());
+            B b = new B(44, 90, 100, 100);
+            Console.WriteLine("The Percentage of Student B is " + b.getPercentage());
+        }
+    }
+}
